@@ -225,5 +225,11 @@ nav#menu ul {
     nav#menu ul.ativo {
         display: flex;
     }
+    img{
+        width: 80%;
+    }
+    .rosto{
+        width: 90px;
+    }
 }
 
