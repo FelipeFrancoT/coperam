@@ -1,1 +1,154 @@
-@charset "UTF-8"
+@charset "UTF-8";
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* VARIÁVEIS */
+:root {
+    --azul-escuro: #0F1E3D;
+    --azul-medio: #1C2F5A;
+    --amarelo: #F4D35E;
+    --branco: #ffffff;
+    --preto: #111111;
+}
+
+/* GERAL */
+body {
+    background-color: var(--azul-medio);
+    color: var(--preto);
+    line-height: 1.6;
+    padding-top: 90px; /* espaço pro header fixo */
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--branco);
+    color: var(--preto);
+    border-radius: 8px;
+}
+
+/* HEADER FIXO */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--azul-escuro);
+    z-index: 1000;
+}
+
+/* MENU */
+.menu {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    padding: 20px;
+    align-items: center;
+    color: var(--amarelo);
+    font-size: 1.8em;
+    font-weight: 700;
+}
+.logo h1{
+    padding-bottom: px;
+}
+.logo img{
+    width: 10%;
+    border-radius: 25%;
+}
+li:hover {
+    
+}
+/* NAV */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--amarelo);
+}
+
+/* SEÇÕES */
+section {
+    margin: 30px auto;
+}
+
+/* INÍCIO */
+#inicio {
+    background: linear-gradient(
+        rgba(15, 30, 61, 0.95),
+        rgba(15, 30, 61, 0.95)
+    );
+    color: var(--branco);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#inicio h2 {
+    font-size: 2em;
+    color: var(--amarelo);
+}
+
+#inicio p {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* TÍTULOS */
+section h2 {
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+}
+
+/* LISTAS */
+#servicos ul {
+    padding-left: 20px;
+}
+
+#servicos li {
+    margin-bottom: 8px;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
