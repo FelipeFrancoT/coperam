@@ -13,7 +13,7 @@
     --azul-escuro: #0F1E3D;
     --azul-medio: #1C2F5A;
     --amarelo: #F4D35E;
-    --branco: #ffffff;
+    --branco: #d6d6d6;
     --preto: #111111;
 }
 
@@ -22,7 +22,8 @@ body {
     background-color: var(--azul-medio);
     color: var(--preto);
     line-height: 1.6;
-    padding-top: 90px; /* espaço pro header fixo */
+    padding-top: 0;
+
 }
 
 .container {
@@ -36,12 +37,10 @@ body {
 
 /* HEADER FIXO */
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--azul-escuro);
     z-index: 1000;
+    background-color: var(--azul-escuro);
 }
 
 /* MENU */
@@ -55,16 +54,44 @@ header {
     justify-content: space-between;
 }
 
-.logo {
-    padding: 20px;
+nav#menu {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
     color: var(--amarelo);
     font-size: 1.8em;
     font-weight: 700;
 }
-.logo h1{
-    padding-bottom: px;
+
+/* MENU */
+nav#menu ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
 }
+
+nav#menu a {
+    text-decoration: none;
+    color: var(--branco);
+    font-weight: 600;
+    padding: 12px 15px;
+    border-radius: 5px;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+nav#menu a:hover {
+    background-color: var(--amarelo);
+    color: var(--azul-escuro);
+}
+
 .logo img{
     width: 10%;
     border-radius: 25%;
@@ -91,8 +118,10 @@ nav a:hover {
 
 /* SEÇÕES */
 section {
-    margin: 30px auto;
+    scroll-margin-top: 90px; /* altura do header */
+    margin: 30px;
 }
+
 
 /* INÍCIO */
 #inicio {
@@ -138,17 +167,51 @@ footer {
     padding: 15px;
     margin-top: 40px;
 }
+#btn-menu {
+    display: none;
+}
+
+nav#menu ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
 
     .menu {
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
     }
 
     nav ul {
         flex-direction: column;
         align-items: center;
     }
+     #btn-menu {
+        display: block;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: var(--amarelo);
+        cursor: pointer;
+    }
+
+    nav#menu ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: var(--azul-escuro);
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    nav#menu ul.ativo {
+        display: flex;
+    }
 }
+
