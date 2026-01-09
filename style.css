@@ -103,8 +103,19 @@ nav#menu a:hover {
     width: 10%;
     border-radius: 25%;
 }
-li:hover {
-    
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: flex-start; /* ou center se preferir */
+  gap: 8px;
+}
+
+li::before {
+  content: "•";
 }
 
 /* NAV */
@@ -135,6 +146,9 @@ img{
     display: block;
     margin: auto;
     border-radius: 8px;
+}
+h3{
+    padding: 10px;
 }
 .img-grande{
     max-width: 600px;
